@@ -4,51 +4,56 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.awt.*;
 
-public class Welcome extends Menu{
+public class Welcome extends JPanel implements ActionListener{
 
   private JTextField textfield1;
   private JLabel label1, label2, label3, label4;
   private JButton boton1,boton2;
   private URI uri;
+  public static String texto = "";
+  
 
   public Welcome(){
+    Menu menu1 =new Menu();
+    add(menu1);
     setLayout(null);
-    setTitle("Bienvenido");
-    getContentPane().setBackground(new Color(10,0,10));
-    setIconImage(new ImageIcon(getClass().getResource("imagenes/imagenprotada2.png")).getImage());
+    // setTitle("Bienvenido");
+    
+    setBackground(new Color(10,0,10));
+    // setIconImage(new ImageIcon(getClass().getResource("imagenes/imagenprotada2.png")).getImage());
     
     ImageIcon imagen = new ImageIcon("imagenes/imagenprotada3.png");
     label1 = new JLabel(imagen);
-    label1.setBounds(25,15,300,150);
+    label1.setBounds(18,15,300,240);
     add(label1);
 
     label2 = new JLabel("Sistema de Control Vacacional");
-    label2.setBounds(35,135,300,30);
+    label2.setBounds(35,270,300,30);
     label2.setFont(new Font("Andale Mono", 3, 18));
     label2.setForeground(new Color(255,255,255));
     add(label2);
 
     label3 = new JLabel("Ingrese su nombre");
-    label3.setBounds(45,212,200,30);
+    label3.setBounds(45,304,200,30);
     label3.setFont(new Font("Andale Mono", 1, 12));
     label3.setForeground(new Color(255,255,255));
     add(label3);
 
     label4 = new JLabel("°2022 Saicol Dev - Saicol Tech");
-    label4.setBounds(85,375,300,30);
+    label4.setBounds(85,410,300,30);
     label4.setFont(new Font("Andale Mono", 1, 12));
     label4.setForeground(new Color(255,255,255));
     add(label4);
 
     textfield1 = new JTextField ();
-    textfield1.setBounds(45,240,255,25);
-    textfield1.setBackground(new Color(224,224,224));
+    textfield1.setBounds(45,329,255,25);
+    textfield1.setBackground(new Color(20,0,20));
     textfield1.setFont(new Font("Andale Mono", 1, 14));
     textfield1.setForeground(new Color(255,0,0));
     add(textfield1);
 
     boton1 = new JButton("Ingresar");
-    boton1.setBounds(45,280,120,30);
+    boton1.setBounds(45,360,120,30);
     boton1.setBackground(new Color(10,0,10));
     boton1.setFont(new Font("Andale Mono", 1, 14));
     boton1.setForeground(new Color(255,0,0));
@@ -57,27 +62,41 @@ public class Welcome extends Menu{
 
 
     boton2 = new JButton("Registrarse");
-    boton2.setBounds(180,280,120,30);
+    boton2.setBounds(180,360,120,30);
     boton2.setBackground(new Color(10,0,10));
     boton2.setFont(new Font("Andale Mono", 1, 14));
     boton2.setForeground(new Color(255,0,0));
     boton2.addActionListener(this);
     add(boton2);
 
+
+
   }
 
 
    public void actionPerformed(ActionEvent e){
      if(e.getSource() == boton1){
-       
+        texto = textfield1.getText().trim();
+            if (texto.equals("")){
+                JOptionPane.showMessageDialog(null, "Pon tu nombre");
+            }else{
+                Licencia ventanalicencia = new Licencia();
+                ventanalicencia.setBounds(0,0,600,360);
+                ventanalicencia.setVisible(true);
+                // ventanalicencia.setResizable(false);
+                // ventanalicencia.setLocationRelativeTo(null);
+                this.setVisible(false);
+            }
+
      }
      if(e.getSource() == boton2){
         SingUp SingUp1 = new SingUp();
         SingUp1.setBounds(0,0,700,600);
         SingUp1.setVisible(true);
-        SingUp1.setResizable(false);
-        SingUp1.setLocationRelativeTo(null);
+        // SingUp1.setResizable(false);
+        // SingUp1.setLocationRelativeTo(null);
      }
+
    }
 
     public void setLink( String link ){   
@@ -87,16 +106,12 @@ public class Welcome extends Menu{
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
-    }   
+    }
+    
+
+    
 
 
-   public static void main(String args[]){
-    Welcome ventanabienvenida = new Welcome();
-     ventanabienvenida.setBounds(0,0,350,500);
-     ventanabienvenida.setVisible(true);
-     ventanabienvenida.setResizable(false);
-     ventanabienvenida.setLocationRelativeTo(null);
-   }
 
 
 public JTextField getTextfield1() {
