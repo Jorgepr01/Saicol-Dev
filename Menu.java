@@ -3,17 +3,16 @@ import java.awt.event.*;
 import java.awt.*;
 
 
-public class Menu extends JPanel implements ActionListener{
+public class Menu extends JFrame implements ActionListener{
     private JMenuBar mainMenu;
     private JMenu option,calculate,mas,tamaño,style;
     private JMenuItem nuevo,exit,prgramada,acercade;
     private JMenuItem big,small,black,claro,red;
     
     public Menu(){
-        JPanel p = new JPanel();
         mainMenu =new JMenuBar();
         mainMenu.setBackground(new Color(10,0,10));
-        p.add(mainMenu);
+        setJMenuBar(mainMenu);
 
         option=new JMenu("Opciones");
         mainMenu.add(option);
@@ -81,13 +80,13 @@ public class Menu extends JPanel implements ActionListener{
 
     public void actionPerformed(ActionEvent arg0) {
         if (arg0.getSource() == red){
-            setBackground(new Color(255,0,0));
+            getContentPane().setBackground(new Color(255,0,0));
         }
         if (arg0.getSource() == black){
-            setBackground(new Color(0,0,0));
+            getContentPane().setBackground(new Color(0,0,0));
         }
 	    if (arg0.getSource() == claro){
-            setBackground(new Color(155,155,155));
+            getContentPane().setBackground(new Color(155,155,155));
         }
         if (arg0.getSource() == nuevo){	
 

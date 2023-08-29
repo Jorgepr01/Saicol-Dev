@@ -18,7 +18,7 @@ public class Bienvenida extends JFrame implements ActionListener{
     // ImageIcon imagen = new ImageIcon("images/logo-coca.png");
     // label1 = new JLabel(imagen);
     // label1.setBounds(25,15,300,150);
-    // add(label1);
+    add(label1);
 
     label2 = new JLabel("Sistema de Control Vacacional");
     label2.setBounds(35,135,300,30);

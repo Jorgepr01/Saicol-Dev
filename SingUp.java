@@ -180,15 +180,15 @@ public class SingUp extends Menu {
              }else if (textfield2.getText().trim().equals("")){
                  JOptionPane.showMessageDialog(null, "Pon tu eddfe");
              }else if (textfield3.getText().trim().equals("")){
-                 JOptionPane.showMessageDialog(null, "Pon tu fevvvvvvvvd");
+                 JOptionPane.showMessageDialog(null, "Pon tu e");
              }else if (textfield4.getText().trim().equals("")){
-                 JOptionPane.showMessageDialog(null, "Pon tu vdvv");
+                 JOptionPane.showMessageDialog(null, "Pon tu nombre");
              }else if (textfield5.getText().trim().equals("")){
-                 JOptionPane.showMessageDialog(null, "Pon tu dvvre");
+                 JOptionPane.showMessageDialog(null, "Pon tu nombre");
              }else if (textfield6.getText().trim().equals("")){
-                 JOptionPane.showMessageDialog(null, "Pon tu efdsc");
+                 JOptionPane.showMessageDialog(null, "Pon tu nombre");
              }else if (textfield7.getText().trim().equals("")){
-                 JOptionPane.showMessageDialog(null, "Pon tu cszcd");
+                 JOptionPane.showMessageDialog(null, "Pon tu nombre");
              }
 
 

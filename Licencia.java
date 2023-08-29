@@ -3,7 +3,7 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Licencia extends JPanel implements ChangeListener{
+public class Licencia extends Menu implements ChangeListener{
 
   private JLabel label1, label2;
   private JCheckBox check1;
@@ -13,11 +13,9 @@ public class Licencia extends JPanel implements ChangeListener{
   String nombre = "";
 
   public Licencia(){
-    JPanel p = new JPanel();
-    
     setLayout(null);
     // setTitle("Licencia de uso");
-    // getContentPane().setBackground(new Color(10,0,10));
+    getContentPane().setBackground(new Color(10,0,10));
     // setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
     Welcome ventanaBienvenida = new Welcome();
     nombre = ventanaBienvenida.texto;
@@ -57,7 +55,7 @@ public class Licencia extends JPanel implements ChangeListener{
 
     boton1 = new JButton("Continuar");
     boton1.setBounds(10,290,100,30);
-    // boton1.addActionListener(p);
+    boton1.addActionListener(this);
     boton1.setEnabled(false);
     boton1.setBackground(new Color(10,0,10));
     boton1.setForeground(new Color(30, 255, 10));
@@ -65,7 +63,7 @@ public class Licencia extends JPanel implements ChangeListener{
     
     boton2 = new JButton("No Acepto");
     boton2.setBounds(120,290,100,30);
-    // boton2.addActionListener(this);
+    boton2.addActionListener(this);
     boton2.setEnabled(true);
     boton2.setBackground(new Color(10,0,10));
     boton2.setForeground(new Color(250, 0, 10));
@@ -109,7 +107,7 @@ public class Licencia extends JPanel implements ChangeListener{
    Licencia ventanalicencia = new Licencia();
    ventanalicencia.setBounds(0,0,600,400);
    ventanalicencia.setVisible(true);
-  //  ventanalicencia.setResizable(false);
-  //  ventanalicencia.setLocationRelativeTo(null);
+   ventanalicencia.setResizable(false);
+   ventanalicencia.setLocationRelativeTo(null);
  }
 }
