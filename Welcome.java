@@ -4,7 +4,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.awt.*;
 
-public class Welcome extends JPanel implements ActionListener{
+public class Welcome extends Menu implements ActionListener{
 
   private JTextField textfield1;
   private JLabel label1, label2, label3, label4;
@@ -14,13 +14,13 @@ public class Welcome extends JPanel implements ActionListener{
   
 
   public Welcome(){
-    Menu menu1 =new Menu();
-    add(menu1);
+    // Menu menu1 =new Menu();
+    // add(menu1);
     setLayout(null);
-    // setTitle("Bienvenido");
+    setTitle("Bienvenido");
     
-    setBackground(new Color(10,0,10));
-    // setIconImage(new ImageIcon(getClass().getResource("imagenes/imagenprotada2.png")).getImage());
+    getContentPane().setBackground(new Color(10,0,10));
+    setIconImage(new ImageIcon(getClass().getResource("imagenes/imagenprotada2.png")).getImage());
     
     ImageIcon imagen = new ImageIcon("imagenes/imagenprotada3.png");
     label1 = new JLabel(imagen);
@@ -172,4 +172,12 @@ public JButton getBoton1() {
 public void setBoton1(JButton boton1) {
     this.boton1 = boton1;
 }
+
+public static void main(String args[]){
+    Welcome ventanabienvenida = new Welcome();
+    ventanabienvenida.setBounds(0,0,350,500);
+    ventanabienvenida.setVisible(true);
+    ventanabienvenida.setResizable(false);
+    ventanabienvenida.setLocationRelativeTo(null);
+  }
 }

@@ -94,7 +94,7 @@ public class Licencia extends Menu implements ChangeListener{
         ventanaPrincipal.setLocationRelativeTo(null);
         this.setVisible(false);
     } else if(e.getSource() == boton2){
-        Bienvenida ventanabienvenida = new Bienvenida();
+      Welcome ventanabienvenida = new Welcome();
         ventanabienvenida.setBounds(0,0,350,450);
         ventanabienvenida.setVisible(true);
         ventanabienvenida.setResizable(false);
@@ -102,12 +102,4 @@ public class Licencia extends Menu implements ChangeListener{
         this.setVisible(false);   
     } 
   }       
-
-  public static void main(String args[]){
-   Licencia ventanalicencia = new Licencia();
-   ventanalicencia.setBounds(0,0,600,400);
-   ventanalicencia.setVisible(true);
-   ventanalicencia.setResizable(false);
-   ventanalicencia.setLocationRelativeTo(null);
- }
 }

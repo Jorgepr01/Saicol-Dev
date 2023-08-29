@@ -20,7 +20,7 @@ public class Principal extends JFrame implements ActionListener{
       setTitle("Pantalla principal");
       getContentPane().setBackground(new Color(10,0,10));
     //   setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
-      Bienvenida ventanaBienvenida = new Bienvenida();
+    Welcome ventanaBienvenida = new Welcome();
       nombreAdministrador = ventanaBienvenida.texto;
 
       mb = new JMenuBar();
@@ -300,7 +300,7 @@ public class Principal extends JFrame implements ActionListener{
         }
 	    if (e.getSource() == miSalir){
 
-   	    Bienvenida ventanabienvenida = new Bienvenida();
+            Welcome ventanabienvenida = new Welcome();
             ventanabienvenida.setBounds(0,0,350,450);
             ventanabienvenida.setVisible(true);
             ventanabienvenida.setResizable(false);
